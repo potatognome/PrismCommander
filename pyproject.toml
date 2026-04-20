@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PrismCommander"
+version = "0.3.0"
+description = "Terminal file-manager / commander built on tUilKit and Chromaspace"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+    { name = "Daniel Austin <the.potato.gnome@gmail.com>" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "tUilKit>=0.7.1",
+]
+
+[project.scripts]
+pc = "PrismCommander.main:main"
+
+[tool.setuptools]
+packages = ["PrismCommander"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+PrismCommander = ["config/*.json", "config/*.yaml"]
+
+
