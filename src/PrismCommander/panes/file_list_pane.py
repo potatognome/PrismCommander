@@ -25,6 +25,8 @@ from typing import Optional, List
 from tUilKit.interfaces.logger_interface import LoggerInterface
 from tUilKit.interfaces.cli_menu_interface import CLIMenuInterface
 
+from PrismCommander._pane_config import get_pane_border
+
 
 class FileListPane:
     """
@@ -37,7 +39,6 @@ class FileListPane:
     """
 
     TITLE = "Files"
-    BORDER_PATTERN = {"TOP": "=", "BOTTOM": "=", "LEFT": "|", "RIGHT": "|"}
     FRAME_WIDTH = 72
     MAX_PREVIEW_ROWS = 24
 
@@ -92,7 +93,7 @@ class FileListPane:
 
         self._logger.apply_border(
             text=f"  {self.TITLE}  —  {self._directory}",
-            pattern=self.BORDER_PATTERN,
+            pattern=get_pane_border(),
             total_length=self.FRAME_WIDTH,
             border_rainbow=True,
         )

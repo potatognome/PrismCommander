@@ -31,6 +31,8 @@ from typing import Optional
 from tUilKit.interfaces.logger_interface import LoggerInterface
 from tUilKit.interfaces.cli_menu_interface import CLIMenuInterface
 
+from PrismCommander._pane_config import get_pane_border
+
 
 class OpsPane:
     """
@@ -43,7 +45,6 @@ class OpsPane:
     """
 
     TITLE = "Operations"
-    BORDER_PATTERN = {"TOP": "=", "BOTTOM": "=", "LEFT": "|", "RIGHT": "|"}
     FRAME_WIDTH = 72
 
     _MENU_OPTIONS = [
@@ -79,7 +80,7 @@ class OpsPane:
         target_str = str(self._target) if self._target else "(none)"
         self._logger.apply_border(
             text=f"  {self.TITLE}  —  {target_str}",
-            pattern=self.BORDER_PATTERN,
+            pattern=get_pane_border(),
             total_length=self.FRAME_WIDTH,
             border_rainbow=True,
         )

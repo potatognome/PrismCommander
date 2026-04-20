@@ -24,6 +24,8 @@ from typing import Optional
 from tUilKit.interfaces.logger_interface import LoggerInterface
 from tUilKit.interfaces.cli_menu_interface import CLIMenuInterface
 
+from PrismCommander._pane_config import get_pane_border
+
 
 class DirPane:
     """
@@ -36,7 +38,6 @@ class DirPane:
     """
 
     TITLE = "Directory"
-    BORDER_PATTERN = {"TOP": "=", "BOTTOM": "=", "LEFT": "|", "RIGHT": "|"}
     FRAME_WIDTH = 72
 
     def __init__(
@@ -54,6 +55,11 @@ class DirPane:
         """The directory currently focused in this pane."""
         return self._path
 
+    @current_path.setter
+    def current_path(self, path: Path) -> None:
+        """Set the directory currently focused in this pane."""
+        self._path = Path(path)
+
     def render(self) -> None:
         """
         Print the DirPane header frame showing the current directory path.
@@ -62,7 +68,7 @@ class DirPane:
         """
         self._logger.apply_border(
             text=f"  {self.TITLE}",
-            pattern=self.BORDER_PATTERN,
+            pattern=get_pane_border(),
             total_length=self.FRAME_WIDTH,
             border_rainbow=True,
         )

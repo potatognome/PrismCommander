@@ -58,9 +58,10 @@ class CommandStrip:
         Print a single-row command strip to stdout.
 
         Each command is shown as:  [Fkey] Description
-        separated by spaces.  The strip is rendered using tUilKit colour keys
-        so that function-key labels are visually distinct from their descriptions.
+        Function-key labels are rendered with "!list" and descriptions with
+        "!info" so they are visually distinct in the terminal.
         """
-        self._logger.colour_log("!info", "  " + "  ".join(
-            f"[{key}] {desc}" for key, desc in self._commands
-        ))
+        parts: list = []
+        for key, desc in self._commands:
+            parts += ["!list", f"[{key}]", "!info", desc]
+        self._logger.colour_log(*parts)

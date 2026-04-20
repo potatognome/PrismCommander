@@ -26,7 +26,10 @@ import shutil
 from pathlib import Path
 from typing import Optional
 
+import PrismCommander
 from tUilKit.interfaces.logger_interface import LoggerInterface
+
+from PrismCommander._pane_config import get_pane_border
 
 
 class StatusBar:
@@ -40,7 +43,6 @@ class StatusBar:
         version  — version tag displayed next to the name (default: "0.3.0")
     """
 
-    BORDER_PATTERN = {"TOP": "=", "BOTTOM": "=", "LEFT": "|", "RIGHT": "|"}
     FRAME_WIDTH = 72
 
     def __init__(
@@ -48,12 +50,12 @@ class StatusBar:
         logger: LoggerInterface,
         path: Optional[Path] = None,
         app_name: str = "PrismCommander",
-        version: str = "0.3.0",
+        version: Optional[str] = None,
     ) -> None:
         self._logger = logger
         self._path = Path(path) if path else Path.cwd()
         self._app_name = app_name
-        self._version = version
+        self._version = version if version is not None else getattr(PrismCommander, "__version__", "0.3.0")
 
     def update(
         self,
@@ -80,7 +82,7 @@ class StatusBar:
 
         self._logger.apply_border(
             text=f"  {self._app_name} v{self._version}",
-            pattern=self.BORDER_PATTERN,
+            pattern=get_pane_border(),
             total_length=self.FRAME_WIDTH,
             border_rainbow=True,
         )

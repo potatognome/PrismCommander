@@ -22,6 +22,8 @@ from typing import Optional
 
 from tUilKit.interfaces.logger_interface import LoggerInterface
 
+from PrismCommander._pane_config import get_pane_border
+
 
 class PreviewPane:
     """
@@ -33,7 +35,6 @@ class PreviewPane:
     """
 
     TITLE = "Preview"
-    BORDER_PATTERN = {"TOP": "=", "BOTTOM": "=", "LEFT": "|", "RIGHT": "|"}
     FRAME_WIDTH = 72
     MAX_LINES = 20
     BINARY_PREVIEW_BYTES = 256
@@ -73,7 +74,7 @@ class PreviewPane:
         if self._path is None:
             self._logger.apply_border(
                 text=f"  {self.TITLE}  —  (no file selected)",
-                pattern=self.BORDER_PATTERN,
+                pattern=get_pane_border(),
                 total_length=self.FRAME_WIDTH,
                 border_rainbow=True,
             )
@@ -83,7 +84,7 @@ class PreviewPane:
         title = f"  {self.TITLE}  —  {self._path.name}"
         self._logger.apply_border(
             text=title,
-            pattern=self.BORDER_PATTERN,
+            pattern=get_pane_border(),
             total_length=self.FRAME_WIDTH,
             border_rainbow=True,
         )

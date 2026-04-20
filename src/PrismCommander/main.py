@@ -90,7 +90,7 @@ def main() -> None:
             chosen = file_list_pane.select()
             if chosen is not None:
                 if chosen.is_dir():
-                    dir_pane._path = chosen
+                    dir_pane.current_path = chosen
                     file_list_pane.directory = chosen
                 else:
                     ops_pane.target = chosen
