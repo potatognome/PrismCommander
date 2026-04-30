@@ -115,5 +115,8 @@
     "time_stamp_files": false,
     "time_stamp_test_files": true,
     "time_stamp_folders": false,
-    "time_stamp_test_folders": true
+    "time_stamp_test_folders": true,
+    "SECONDARY": {
+        "FILE": "PrismCommander_SECONDARY.json"
+    }
 }

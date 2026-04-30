@@ -1,0 +1,122 @@
+{
+    "INFO": {
+        "PROJECT_FOLDER": "/Applications/PrismCommander/",
+        "PROJECT_DESCRIPTION": "{PROJECT_DESCRIPTION}",
+        "AUTHOR": "{AUTHOR}",
+        "MAIN_ENTRY_POINT": "PrismCommander.main:main"
+    },
+    "ROOTS": {
+        "WORKSPACE": "C:\\Repository\\Daniel\\dev_local",
+        "PROJECT": "C:\\Repository\\Daniel\\dev_local\\Applications\\PrismCommander"
+    },
+    "ROOT_MODES": {
+        "LOG_PATHS": "workspace",
+        "TESTS_LOGS": "workspace",
+        "CONFIG": "workspace",
+        "TESTS_CONFIG": "project",
+        "OUTPUT_DATA": "workspace",
+        "INPUT_DATA": "workspace",
+        "TESTS_INPUTS": "workspace",
+        "TESTS_OUTPUTS": "workspace"
+    },
+    "PATHS": {
+        "LOG_PATHS": ".logs/PrismCommander/",
+        "TESTS_LOGS": ".tests_logs/PrismCommander/",
+        "CONFIG": "config/",
+        "TESTS_CONFIG": ".tests_config/",
+        "OUTPUT_DATA": ".projects_data/PrismCommander/",
+        "INPUT_DATA": ".projects_data/input_data/",
+        "TESTS_INPUTS": ".tests_data/",
+        "TESTS_OUTPUTS": ".tests_data/output/"
+    },
+    "SHARED_CONFIG": {
+        "ENABLED": true,
+        "PATH": "GLOBAL_SHARED.d/",
+        "FILES": {
+            "COLOURS": "COLOURS.json",
+            "BORDER_PATTERNS": "BORDER_PATTERNS.json",
+            "TESTS_OPTIONS": "TESTS_OPTIONS.json",
+            "TIME_STAMP_OPTIONS": "TIME_STAMP_OPTIONS.json"
+        }
+    },
+    "ALT_CONFIG": {
+        "ENABLED": false,
+        "PATH": "",
+        "FILES": {
+            "COLOURS": "",
+            "BORDER_PATTERNS": "",
+            "TESTS_OPTIONS": "",
+            "TIME_STAMP_OPTIONS": ""
+        }
+    },
+    "LOG_FILES": {
+        "SESSION": "logs/RUNTIME.log",
+        "MASTER": "logs/MASTER.log",
+        "ERROR": "logs/ERROR.log",
+        "FS": "logs/FS.log",
+        "INIT": "logs/INIT.log",
+        "DEBUG": "logs/DEBUG.log",
+        "WARNING": "logs/WARNING.log",
+        "RUNTIME": "PrismCommander_RUNTIME.log",
+        "TRY": "PrismCommander_TRY.log",
+        "CONFIG_READ": "PrismCommander_CONFIG_READ.log"
+    },
+    "LOG_CATEGORIES": {
+        "default": [
+            "MASTER",
+            "SESSION"
+        ],
+        "error": [
+            "ERROR",
+            "SESSION",
+            "MASTER"
+        ],
+        "fs": [
+            "MASTER",
+            "SESSION",
+            "FS"
+        ],
+        "init": [
+            "INIT",
+            "SESSION",
+            "MASTER"
+        ],
+        "debug": [
+            "DEBUG",
+            "SESSION"
+        ],
+        "warning": [
+            "WARNING",
+            "SESSION",
+            "MASTER"
+        ],
+        "all": [
+            "MASTER",
+            "SESSION",
+            "ERROR",
+            "FS",
+            "INIT",
+            "DEBUG",
+            "WARNING"
+        ]
+    },
+    "PROJECT_NAME": "PrismCommander",
+    "PROJECT_DESCRIPTION": "Terminal file-manager / commander built on tUilKit and Chromaspace",
+    "AUTHOR": "Daniel Austin <the.potato.gnome@gmail.com>",
+    "VERSION": "0.3.0",
+    "CONFIG_FILES": {
+        "COLOURS": "config/COLOURS.json",
+        "BORDER_PATTERNS": "config/BORDER_PATTERNS.json",
+        "GLOBAL_CONFIG": "config/GLOBAL_CONFIG.json"
+    },
+    "time_stamp_format": "%Y%m%d_%H%M%S",
+    "time_stamp_logs": true,
+    "time_stamp_test_logs": true,
+    "time_stamp_files": false,
+    "time_stamp_test_files": true,
+    "time_stamp_folders": false,
+    "time_stamp_test_folders": true,
+    "SECONDARY": {
+        "FILE": "PrismCommander_SECONDARY.json"
+    }
+}
