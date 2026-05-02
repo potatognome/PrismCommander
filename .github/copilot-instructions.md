@@ -394,7 +394,7 @@ Requirements:
   special characters, very long strings).
 - Produce visual, interactive, colour-logged output alongside structured logs
   for human review.
-- Keep scripts as living behaviour documentation.
+- Keep scripts as living behavior documentation.
 - Maintain an `examples/exemplar.py` mock application entry point.
 
 `examples/exemplar.py` should:
