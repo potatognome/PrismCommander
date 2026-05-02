@@ -276,3 +276,6 @@ Requirements:
 - Read the project primary config file.
 - Read and test-load all `ROOT_MODES`.
 - Verify and display resolved paths for `LOG_FILES`, config files, and input data files.
+
+Refer to:
+- [Modular copilot-instructions](./copilot-instructions.d/*.md) for extensions to the general rules in this file.
