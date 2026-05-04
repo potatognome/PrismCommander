@@ -3,7 +3,8 @@
                  "PROJECT_FOLDER":  "/Applications/PrismCommander/",
                  "PROJECT_DESCRIPTION":  "{PROJECT_DESCRIPTION}",
                  "AUTHOR":  "{AUTHOR}",
-                 "MAIN_ENTRY_POINT":  "PrismCommander.main:main"
+                 "MAIN_ENTRY_POINT":  "PrismCommander.main:main",
+                 "COLOUR_FSTR": "!project"
              },
     "ROOTS":  {
                   "WORKSPACE":  "C:/Repository/Daniel/dev_local",
