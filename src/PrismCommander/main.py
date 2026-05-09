@@ -12,6 +12,20 @@ Run via:
 """
 
 from pathlib import Path
+import os
+import sys
+
+# Allow `python src/PrismCommander/main.py` by ensuring `src` is importable.
+if __package__ in (None, ""):
+    _SRC_ROOT = Path(__file__).resolve().parent.parent
+    if str(_SRC_ROOT) not in sys.path:
+        sys.path.insert(0, str(_SRC_ROOT))
+
+# In local multi-repo workspaces, tUilKit may live under ../../../../Core/tUilKit/src.
+_WORKSPACE_ROOT = Path(__file__).resolve().parents[4]
+_TUILKIT_SRC = _WORKSPACE_ROOT / "Core" / "tUilKit" / "src"
+if _TUILKIT_SRC.exists() and str(_TUILKIT_SRC) not in sys.path:
+    sys.path.insert(0, str(_TUILKIT_SRC))
 
 import tUilKit
 from tUilKit.interfaces.logger_interface import LoggerInterface
@@ -105,3 +119,10 @@ def main() -> None:
 
         elif choice == "ops":
             ops_pane.run()
+
+
+if __name__ == "__main__":
+    project_root = Path(__file__).resolve().parents[2]
+    if not (Path.cwd() / "config").exists() and (project_root / "config").exists():
+        os.chdir(project_root)
+    main()

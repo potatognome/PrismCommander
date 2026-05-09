@@ -9,6 +9,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from typing import Iterable
 
 
 HERE = Path(__file__).resolve()
@@ -55,8 +56,25 @@ def _resolve(mode_key: str, path_key: str, fallback: str) -> Path:
     return (base / rel).resolve()
 
 
+def _pick(mapping: dict, keys: Iterable[str], default: str) -> str:
+    for key in keys:
+        value = mapping.get(key)
+        if isinstance(value, str) and value.strip():
+            return value
+    return default
+
+
+def _resolve_any(mode_keys: Iterable[str], path_keys: Iterable[str], fallback: str) -> Path:
+    modes = CONFIG.get("ROOT_MODES", {}) if isinstance(CONFIG.get("ROOT_MODES"), dict) else {}
+    paths = CONFIG.get("PATHS", {}) if isinstance(CONFIG.get("PATHS"), dict) else {}
+    mode = _pick(modes, mode_keys, "project").lower().strip()
+    base = WORKSPACE_ROOT if mode == "workspace" else PROJECT_ROOT
+    rel = _pick(paths, path_keys, fallback)
+    return (base / rel).resolve()
+
+
 def _log_targets() -> list[str]:
-    log_root = _resolve("LOG_PATHS", "LOG_PATHS", ".logs/PrismCommander/")
+    log_root = _resolve_any(("LOGS", "LOG_PATHS"), ("LOGS", "LOG_PATHS"), ".logs/PrismCommander/")
     log_root.mkdir(parents=True, exist_ok=True)
     out: list[str] = []
     for key in CONFIG.get("LOG_CATEGORIES", {}).get("default", ["MASTER", "SESSION"]):
@@ -101,9 +119,9 @@ def show_config_and_paths() -> None:
     for key_name, value in CONFIG.get("ROOT_MODES", {}).items():
         log_line(f"ROOT_MODE[{key_name}] = {value}", key="!data")
 
-    log_root = _resolve("LOG_PATHS", "LOG_PATHS", ".logs/PrismCommander/")
+    log_root = _resolve_any(("LOGS", "LOG_PATHS"), ("LOGS", "LOG_PATHS"), ".logs/PrismCommander/")
     cfg_root = _resolve("CONFIG", "CONFIG", "config/")
-    input_root = _resolve("INPUT_DATA", "INPUT_DATA", ".projects_data/input_data/")
+    input_root = _resolve_any(("INPUTS", "INPUT_DATA"), ("INPUTS", "INPUT_DATA"), ".projects_data/input_data/")
     log_line(f"Resolved LOG_PATHS: {log_root}", key="!info")
     log_line(f"Resolved CONFIG path: {cfg_root}", key="!info")
     log_line(f"Resolved INPUT_DATA path: {input_root}", key="!info")
