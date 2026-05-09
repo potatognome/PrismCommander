@@ -3,8 +3,8 @@
 ## Purpose
 
 PrismCommander (`pc`) is a modular, extensible, pane-based file manager built on
- tUilKit and Chromaspace. Its primary entry point is `pc.py` at the project root,
- with source under `src/PrismCommander/`.
+tUilKit and Chromaspace. Its primary entry point is `pc.py` at the project root,
+with source under `src/PrismCommander/`.
 
 Copilot must treat tUilKit and Chromaspace as first-class, authoritative
 frameworks. Rendering, composition, layout, file operations, configuration,
@@ -16,6 +16,9 @@ colour, and logging must flow through those systems.
 
 PrismCommander is a **windowed, pane-based environment** powered by the tUilKit
 compositor.
+
+In this document, a **folder-content window** means a window whose primary pane
+shows directory/file content for navigation and file operations.
 
 - **Dual-pane file manager by default**, with any number of windows supported.
 - A **true windowed model** where windows are tUilKit widgets managed by a
@@ -130,7 +133,7 @@ New application modules must live under `src/PrismCommander/`.
   - May include panes for folder tree, drive letters, shortcut folders,
     network drives, Samba shares, cloud/device/git lists, and similar
     navigation contexts.
-  - Must keep address-bar pane at top for each folder-content window.
+  - When a window hosts folder content, its address-bar pane remains at the top.
 
 - **Pane widgets**
   - Self-contained widgets with consistent lifecycle.
