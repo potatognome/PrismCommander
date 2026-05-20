@@ -4,9 +4,9 @@
   "config_file": "C:\\Repository\\Daniel\\dev_local\\Applications\\PrismCommander\\config\\PrismCommander_CONFIG.json",
   "project_root": "C:\\Repository\\Daniel\\dev_local\\Applications\\PrismCommander",
   "workspace_root": "C:\\Repository\\Daniel\\dev_local",
-  "config_folder": "C:\\Repository\\Daniel\\dev_local\\config",
-  "test_logs_folder": "C:\\Repository\\Daniel\\dev_local\\.tests_logs\\PrismCommander",
-  "logs_folder": "C:\\Repository\\Daniel\\dev_local\\.logs\\PrismCommander",
-  "tests_inputs_folder": "C:\\Repository\\Daniel\\dev_local\\.tests_data",
-  "tests_outputs_folder": "C:\\Repository\\Daniel\\dev_local\\.tests_data\\output"
+  "config_folder": "C:\\Repository\\Daniel\\dev_local\\.projects_config",
+  "test_logs_folder": "C:\\Repository\\Daniel\\dev_local\\Applications\\PrismCommander\\examples\\.logs",
+  "logs_folder": "C:\\Repository\\Daniel\\dev_local\\Applications\\PrismCommander\\.logs\\PrismCommander",
+  "tests_inputs_folder": "C:\\Repository\\Daniel\\dev_local\\Applications\\PrismCommander\\examples\\.inputData",
+  "tests_outputs_folder": "C:\\Repository\\Daniel\\dev_local\\Applications\\PrismCommander\\examples\\.outputData"
 }

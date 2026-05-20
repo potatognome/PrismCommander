@@ -12,7 +12,8 @@
     },
     "ROOTS": {
         "WORKSPACE": "C:/Repository/Daniel/dev_local",
-        "PROJECT": "C:/Repository/Daniel/dev_local/Applications/PrismCommander"
+        "PROJECT": "C:/Repository/Daniel/dev_local/Applications/PrismCommander",
+        "TUILKit": "C:/Repository/Daniel/dev_local/Core/tUilKit"
     },
     "ROOT_MODES": {
         "CONFIG": "workspace",
@@ -27,35 +28,16 @@
     "PATHS": {
         "CONFIG": ".projects_config/",
         "LOGS": ".logs/PrismCommander/",
-        "INPUTS": ".projects_data/inputData/PrismCommander/",
-        "OUTPUTS": ".projects_data/outputData/PrismCommander/",
-        "TESTS_CONFIG": "examples/.config/",
-        "TESTS_LOGS": "examples/.logs/",
-        "TESTS_INPUTS": "examples/.inputData/",
-        "TESTS_OUTPUTS": "examples/.outputData/"
-    },
-    "SHARED_CONFIG": {
-        "ENABLED": true,
-        "PATH": "GLOBAL_SHARED.d/",
-        "FILES": {
-            "COLOURS": "COLOURS.json",
-            "BORDER_PATTERNS": "BORDER_PATTERNS.json",
-            "TESTS_OPTIONS": "TESTS_OPTIONS.json",
-            "TIME_STAMP_OPTIONS": "TIME_STAMP_OPTIONS.json"
-        }
+        "INPUTS": ".projects_data/inputData//PrismCommander/",
+        "OUTPUTS": ".projects_data/outputData//PrismCommander/",
+        "TESTS_CONFIG": "tests/.config/",
+        "TESTS_LOGS": "tests/.logs/",
+        "TESTS_INPUTS": "tests/.inputData/",
+        "TESTS_OUTPUTS": "tests/.outputData/"
     },
     "ALT_CONFIG": {
         "ENABLED": false,
-        "PATH": "",
-        "FILES": {
-            "COLOURS": "",
-            "BORDER_PATTERNS": "",
-            "TESTS_OPTIONS": "",
-            "TIME_STAMP_OPTIONS": ""
-        }
-    },
-    "SECONDARY": {
-        "FILE": "PrismCommander_SECONDARY.json"
+        "FILE_PATHS": []
     },
     "LOG_FILES": {
         "DEBUG": "logs/DEBUG.log",
@@ -68,6 +50,9 @@
         "FS": "PrismCommander_FS.log",
         "CONFIG_READ": "PrismCommander_CONFIG_READ.log",
         "ERROR": "PrismCommander_ERROR.log"
+    },
+    "SECONDARY": {
+        "FILE": "PrismCommander_SECONDARY.json"
     },
     "LOG_CATEGORIES": {
         "debug": [
@@ -123,6 +108,16 @@
             "CONFIG_READ",
             "ERROR"
         ]
+    },
+    "SHARED_CONFIG": {
+        "ENABLED": true,
+        "PATH": "GLOBAL_SHARED.d/",
+        "FILES": {
+            "COLOURS": "COLOURS.json",
+            "BORDER_PATTERNS": "BORDER_PATTERNS.json",
+            "TESTS_OPTIONS": "TESTS_OPTIONS.json",
+            "TIME_STAMP_OPTIONS": "TIME_STAMP_OPTIONS.json"
+        }
     },
     "PROJECT_NAME": "PrismCommander",
     "PROJECT_DESCRIPTION": "Terminal file-manager / commander built on tUilKit and Chromaspace",

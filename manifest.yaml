@@ -1,0 +1,18 @@
+name: PrismCommander
+layer: interface
+description: Dual-pane file manager with Syncbot integration and tUilKit UI.
+capabilities:
+  - browse_files
+  - manage_files
+  - sync_operations
+depends_on:
+  - tUilKit
+  - Prism
+  - Syncbot
+provides:
+  - FileSpec
+protocols:
+  - ui.schema
+  - sync.schema
+working_hours: "24/7"
+schema_version: "1.0"

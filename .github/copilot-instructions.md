@@ -360,3 +360,6 @@ pytest and stress public APIs, menu paths, and error paths.
 - Read `config/PrismCommander_CONFIG.json`
 - Exercise configured root/workspace modes
 - Verify/display resolved paths for logs, config files, and input data files
+
+Refer to:
+- [Modular copilot-instructions](./copilot-instructions.d/*.md) for extensions to the general rules in this file.
