@@ -11,7 +11,7 @@
         "BUILD_TYPE": "Application"
     },
     "ROOTS": {
-        "WORKSPACE": "C:/Repository/Daniel/dev_local",
+        "WORKSPACE": "C:/Repository/Daniel/dev_local/Prismata",
         "PROJECT": "C:/Repository/Daniel/dev_local/Applications/PrismCommander",
         "TUILKit": "C:/Repository/Daniel/dev_local/Core/tUilKit"
     },
@@ -26,18 +26,19 @@
         "TESTS_OUTPUTS": "project"
     },
     "PATHS": {
-        "CONFIG": ".projects_config/",
-        "LOGS": ".logs/PrismCommander/",
+        "CONFIG": ".workspace/.projects_config/",
+        "LOGS": ".workspace/.logs/PrismCommander/",
         "INPUTS": ".projects_data/inputData//PrismCommander/",
         "OUTPUTS": ".projects_data/outputData//PrismCommander/",
         "TESTS_CONFIG": "tests/.config/",
         "TESTS_LOGS": "tests/.logs/",
         "TESTS_INPUTS": "tests/.inputData/",
-        "TESTS_OUTPUTS": "tests/.outputData/"
+        "TESTS_OUTPUTS": "tests/.outputData/",
+        "GLOBAL_SHARED.d": ".workspace/.projects_config/GLOBAL_SHARED.d/"
     },
     "ALT_CONFIG": {
-        "ENABLED": false,
-        "FILE_PATHS": []
+        "FILE_PATHS": [],
+        "ENABLED": false
     },
     "LOG_FILES": {
         "DEBUG": "logs/DEBUG.log",
@@ -108,16 +109,6 @@
             "CONFIG_READ",
             "ERROR"
         ]
-    },
-    "SHARED_CONFIG": {
-        "ENABLED": true,
-        "PATH": "GLOBAL_SHARED.d/",
-        "FILES": {
-            "COLOURS": "COLOURS.json",
-            "BORDER_PATTERNS": "BORDER_PATTERNS.json",
-            "TESTS_OPTIONS": "TESTS_OPTIONS.json",
-            "TIME_STAMP_OPTIONS": "TIME_STAMP_OPTIONS.json"
-        }
     },
     "PROJECT_NAME": "PrismCommander",
     "PROJECT_DESCRIPTION": "Terminal file-manager / commander built on tUilKit and Chromaspace",
